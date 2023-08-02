@@ -1,3 +1,5 @@
+const cors = require("cors");
+
 require("dotenv").config();
 
 const express = require("express");
@@ -6,6 +8,9 @@ const workoutRoute = require("./routes/workouts");
 
 // express app
 const app = express();
+
+// enforcing cors policies
+app.use(cors());
 
 // allows req to be sent from frontend
 app.use(express.json());
